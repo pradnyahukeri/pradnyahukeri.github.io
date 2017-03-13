@@ -1,65 +1,38 @@
-﻿<!doctype html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<html>
+<HEAD> </HEAD>
 
-	<title>IOT Project</title>
-	<meta name="description" content="Pi House Demo">
-	<meta name="author" content="Tomomi Imura  @girlie_mac">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/style.css">
-</head>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- I highly suggest to add atleast some protection to make the script into an external js document... that way its just a tiny bit more secure... -->
 
-<body>
-<!-- Google Tag Manager -->
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PZWSZ2"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PZWSZ2');</script>
-<!-- End Google Tag Manager -->
-	<header>
-		<img src="images/lego.png">
-		AMGOI, <strong>VATHAR</strong>
-		<div class="pubnub"></div>
-	</header>
-	<section class="container">
+function LogIn(){
+loggedin=false;
+username="";
+password="";
+username=prompt("Username:","");
+username=username.toLowerCase();
+password=prompt("Password:","");
+password=password.toLowerCase();
+if (username=="guest" && password=="login") { 
+loggedin=true;
+window.location="pp.html";
+}
+if (username=="guest2" && password=="login2") {
+loggedin=true;
+window.location="home-page2.html";
+}
+if (loggedin==false) {
+alert("Invalid login!");
+}
+}
+</SCRIPT> 
 
-		<section class="temp-hum-display">
-			<section class="temp-container">
-			    <div class="caption">Temp.=</div>
-				<div class="temp" data-temperature="24"><span>℃</span></div>
-			</section>
-			<section class="hum-container">
-			    <div class="caption">Humidity=</div>
-				<div class="hum" data-humidity="45"><span class="fa wet"> &#37;</span></div>
-			</section>
-		</section>
+<BODY bgcolor="sky blue">
 
-		<section class="pref-container">
-			<section class="preference">
-				<div>
-					<div class="caption">Load Relay1:</div>
-					<label for="Relay1">
-						<input id="Relay1" type="checkbox">
-						<div class="toggle-button">
-							<div class="switch"></div>
-						</div>
-					</label>
-				</div>
-			</section>
+<h1 align="center"> <font size="7" >IOT BASED INTELLIGENT SYSTEM FOR MONITORING AND CONTROLLING OF MACHINES IN INDUSTRY</font></h1>
 
-		</section>
 
-	</section>
-
-	<footer>
-		Last Update: 11 May 2016
-	</footer>
-
-	<script src="http://cdn.pubnub.com/pubnub-3.7.11.min.js"></script>
-	<script src="js/app.js"></script>
+<center>
+<form><input type=button style=" width:80px; height:50px; font-weight:bold" value="Login!" onClick="LogIn()"></form>
+</center>
 </body>
-</html>
+<html>
